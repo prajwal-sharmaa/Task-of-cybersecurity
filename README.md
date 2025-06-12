@@ -38,6 +38,16 @@ sqlmap -u "http://testphp.vulnweb.com/listproducts.php?cat=1" --dbs
 git clone https://github.com/maurosoria/dirsearch.git
 cd dirsearch
 python3 dirsearch.py -u http://testphp.vulnweb.com/
+```
+## 📸 Screenshots:
 
+### 🔹 Basic Linux Commands
+![Linux Commands](images/Linux_Command.png)
+
+### 🔹 SQLMap Output
+![SQLMap](images/Dirsearch_result.png)
+
+### 🔹 Dirsearch Results
+![Dirsearch](images/Sqlmap_output.png)
 
 
