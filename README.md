@@ -51,3 +51,62 @@ python3 dirsearch.py -u http://testphp.vulnweb.com/
 ![Dirsearch](images/Sqlmap_output.png)
 
 
+
+---
+
+## 🕵️ Task 2 – Information Gathering using Maltego
+
+In this task, I used the Maltego GUI-based OSINT tool to gather public data about the website `http://testphp.vulnweb.com`.
+
+### 🔍 What I Did:
+- Added the website node (`testphp.vulnweb.com`) to a new Maltego graph
+- Ran transforms like:
+  - To IP Address
+  - To DNS
+  - To WHOIS
+  - To Netblock
+- Mapped ownership, DNS, IP, and associated domains
+
+### 🧠 Key Findings:
+- IP Address: `44.228.249.3`
+- Netblock: AWS server block
+- Registrar: `EuroDNS S.A.`
+- Email contact: `legalservices@eurodns.com`
+- Connected domains: Acunetix, medium.com, geeksforgeeks.org and more
+
+### 📸 Screenshot:
+![Maltego Graph](images/Maltego_Graph.png)
+
+---
+
+This helped me understand how domains can be passively mapped and ownership traced, all without touching the target.
+
+
+---
+
+## 🧪 Task 3 – Sniffing Attack using Wireshark
+
+For this task, I used Wireshark to sniff traffic over an HTTP website (`http://testphp.vulnweb.com`) and successfully captured login credentials submitted through a form.
+
+### 🔍 What I Did:
+- Started capture on `Wi-Fi 2` interface
+- Visited the test login page
+- Entered dummy credentials:
+  - Username: hacker
+  - Password: idontcare
+- Applied packet filter:
+  ```bash
+  http.request.method == "POST"
+
+After applying the `POST` filter and following the TCP stream, I extracted the following:
+
+### 📸 Captured Screenshot:
+![Wireshark Output](images/Wiresharklogin.png)
+
+> The credentials were:
+> - uname = hacker
+> - pass = idontcare
+
+---
+
+
