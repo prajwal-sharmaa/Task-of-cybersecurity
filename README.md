@@ -1,4 +1,4 @@
-# ⚔️ Kali Linux - Hands-on (FutureIntern Cybersecurity Internship Task 1)
+# ⚔️ Kali Linux - Hands-on (Cybersecurity Internship Task 1)
 
 Hey! I'm Prajwal Sharma, currently pursuing B.Tech in Computer Science and working as a Cybersecurity Intern at FutureIntern.
 
